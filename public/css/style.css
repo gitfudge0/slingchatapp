@@ -1,0 +1,129 @@
+/* --------------------- DEFAULT:BEGIN --------------------- */
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    body > .container-fluid {
+        height: 100%;
+        overflow: hidden;
+    }
+/* --------------------- DEFAULT:END --------------------- */
+
+/* --------------------- CUSTOM:START --------------------- */
+
+    .head-band {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border-bottom: 1px solid #96ADBF;
+    }
+
+    .padding-full {
+        padding: 16px;
+    }
+    
+    .padding-vert {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .padding-horz {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+/* --------------------- CUSTOM:END --------------------- */
+
+/* --------------------- HEADER:BEGIN --------------------- */
+
+    #header {
+        padding: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        color: orangered;
+    }
+/* --------------------- HEADER:END --------------------- */
+
+/* --------------------- SIDEBAR STYLES:BEGIN --------------------- */
+
+    #sidebar {
+        background: #C8E7FF;
+        color: #323A40;
+        height: 100%;
+    }
+
+    #sidebar > div {
+        padding: 0;
+    }
+
+    #sidebar ul {
+        padding: 0;
+        list-style: none;
+        width: 100%;
+    }
+
+    #sidebar ul li {
+        padding: 12px 16px;
+        border-bottom: 1px solid #96ADBF;
+        cursor: pointer;
+    }
+
+    #sidebar ul li:hover {
+        background: #96ADBF;
+    }
+
+    .topic-selected {
+        background: #96ADBF;
+    }
+/* --------------------- SIDEBAR STYLES:END --------------------- */
+
+/* --------------------- CHAT WINDOW:START --------------------- */
+
+    #chat-window {
+        height: calc(100% - 64px);
+        overflow-y: auto;
+    }
+
+    .chat-row {
+        padding: 8px;
+    }
+
+    .chat-row .chat-title {
+        display: block;
+        font-size: 10px;
+        color: #64737F;
+        margin-bottom: 4px;
+    }
+
+    .chat-row .chat-bubble {
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        padding: 2px;
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    .chat-bubble img {
+        max-width: 240px;
+    }
+
+    .chat-bubble-text {
+        padding: 12px 16px;
+    }
+
+    .chat-bubble-red {
+        background: #FEE9E9;
+        color: #FE4F4E;
+    }
+
+    .chat-bubble-green {
+        color: #5FCB2A;
+        background: #E9FEEF;
+    }
+
+/* --------------------- CHAT WINDOW:END --------------------- */

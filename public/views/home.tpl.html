@@ -1,0 +1,71 @@
+<ul id="header" class="nav">
+    <li class="nav-item">
+        SLING
+    </li>
+</ul>
+<div class="row" style="height: calc(100% - 48px)">
+    <div class="col-md-3 col-lg-3  d-sm-none d-none d-md-block d-lg-block">
+        <div class="row" id="sidebar">
+            <div class="col">
+                <div class="head-band">TOPICS</div>
+                <ul>
+                    <li ng-click="getChatData(key);" ng-class="{'topic-selected': selectedTopic == key}" ng-repeat="(key, value) in topics track by $index"> {{ key }} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 d-block d-sm-block d-md-none" ng-hide="showChatWindow">
+        <div class="row" id="sidebar">
+            <div class="col">
+                <div class="head-band">TOPICS</div>
+                <ul>
+                    <li ng-click="getChatData(key);" ng-repeat="(key, value) in topics track by $index"> {{ key }} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-lg-9 d-sm-none d-none d-md-block d-lg-block">
+        <div class="row" ng-if="selectedTopic">
+            <div class="col">
+                <div class="head-band">
+                    {{ selectedTopic }}
+                </div>
+            </div>
+        </div>
+        <div class="row" id="chat-window">
+            <div class="col">
+                <div class="chat-row" ng-class="{'text-right' : chat.from != 'slingbot'}" ng-repeat="chat in chatData track by $index">
+                    <div class="chat-title" ng-if="isFromValid($index)">{{chat.from}}</div>
+                    <div class="chat-bubble" ng-class="{'chat-bubble-red' : chat.score == -1, 'chat-bubble-green' : chat.score == 1}">
+                        <div ng-if="chat.messageType === 2"><img ng-src="{{chat.mediaUrl}}" alt="chat image"></div>
+                        <div ng-if="chat.messageType === 3">
+                            <audio controls src="http://www.noiseaddicts.com/samples_1w72b820/2558.mp3"></audio>
+                        </div>
+                        <div class="chat-bubble-text" ng-bind-html="chat.message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 d-block d-sm-block d-md-none" ng-show="showChatWindow">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-light" ng-click="showChatWindow = false">Back</button>
+            </div>
+        </div>
+        <div class="row" id="chat-window">
+            <div class="col">
+                <div class="chat-row" ng-class="{'text-right' : chat.from != 'slingbot'}" ng-repeat="chat in chatData track by $index">
+                    <div class="chat-title" ng-if="isFromValid($index)">{{chat.from}}</div>
+                    <div class="chat-bubble" ng-class="{'chat-bubble-red' : chat.score == -1, 'chat-bubble-green' : chat.score == 1}">
+                        <div ng-if="chat.messageType === 2"><img ng-src="{{chat.mediaUrl}}" alt="chat image"></div>
+                        <div ng-if="chat.messageType === 3">
+                            <audio controls src="http://www.noiseaddicts.com/samples_1w72b820/2558.mp3"></audio>
+                        </div>
+                        <div class="chat-bubble-text" ng-bind-html="chat.message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
